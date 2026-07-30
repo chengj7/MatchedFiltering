@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - marimo
     tags: ["*"]
   pull_request:
 
