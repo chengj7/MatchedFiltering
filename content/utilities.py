@@ -81,7 +81,8 @@ def filter_and_plot_edit(
     h, t, htilde, sampling_rate, sliders, notch_filters, equalizer_power, notch_filter_power,
     frequencies, frequency_bin_upper_ends
 ):
-
+    import marimo as mo
+    
     # Get levels from sliders
     levels = np.ones_like(frequencies)
     if equalizer_power.value == "On":
@@ -144,6 +145,7 @@ def plot_td_and_fd(t, hprime, f, htildeprime, h=None, htilde=None):
 def plot_td_and_fd_edit(t, hprime, f, htildeprime, h=None, htilde=None):
     import plotly.graph_objects as go
     from plotly.subplots import make_subplots
+    import marimo as mo
 
     print('Contrast: {0:.4f}'.format(np.max(np.abs(hprime)) / np.sqrt(np.mean(np.abs(hprime)**2))))
 
