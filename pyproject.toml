@@ -18,6 +18,9 @@ extra-dependencies = [
   "uv",
 ]
 
+[tool.marimo.runtime]
+output_max_bytes = 9_000_000
+
 [tool.hatch.envs.marimo.scripts]
 edit = "marimo edit --sandbox ./content/matchedfiltering.py"
 run = "marimo run --sandbox ./content/matchedfiltering.py"
