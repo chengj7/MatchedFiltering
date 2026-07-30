@@ -51,12 +51,6 @@ jobs:
       - name: Export notebook
         run: .venv/bin/hatch run marimo:convert
         
-      - name: Debug output contents
-        run: |
-          echo "=== output/ top level ==="
-          ls -la output/
-          echo "=== full tree ==="
-          find output/ -maxdepth 2
           
       - name: Upload document_root directory as artifact
         uses: actions/upload-pages-artifact@v5
