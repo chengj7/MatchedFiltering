@@ -22,6 +22,7 @@ extra-dependencies = [
 output_max_bytes = 10_000_000
 
 [tool.hatch.envs.marimo.scripts]
+config-check = "marimo config show"
 edit = "marimo edit --sandbox ./content/matchedfiltering.py"
 run = "marimo run --sandbox ./content/matchedfiltering.py"
 check = "uv run ./content/matchedfiltering.py"  # Just to see if the script runs successfully
