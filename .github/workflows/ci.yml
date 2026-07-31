@@ -48,14 +48,12 @@ jobs:
         if: "!contains(github.event.head_commit.message, '[skip marimo check]')"
         run: .venv/bin/hatch run marimo:check ./content/matchedfiltering.py 
 
-
       - name: Show resolved marimo config
         run: .venv/bin/hatch run marimo:config-check
         
       - name: Export notebook
         run: .venv/bin/hatch run marimo:convert
         
-          
       - name: Upload document_root directory as artifact
         uses: actions/upload-pages-artifact@v5
         with:
