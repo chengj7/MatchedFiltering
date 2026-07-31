@@ -54,7 +54,7 @@ jobs:
       - name: Export notebook
         run: .venv/bin/hatch run marimo:convert
         env:
-          MARIMO_OUTPUT_MAX_BYTES: "10000000"
+          MARIMO_OUTPUT_MAX_BYTES: "8500000"
         
       - name: Upload document_root directory as artifact
         uses: actions/upload-pages-artifact@v5
