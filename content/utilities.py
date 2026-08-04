@@ -157,11 +157,11 @@ def plot_td_and_fd_edit(t, hprime, f, htildeprime, h=None, htilde=None):
 
     #time domain plot
     if h is not None:
-        fig.add_trace(go.Scatter(x=t, y=h, name='Raw data'), row=1, col=1)
-        fig.add_trace(go.Scatter(x=t, y=hprime, name='Filtered data'), row=1, col=1)
+        fig.add_trace(go.Scatter(x=t, y=h, name='Raw data', line=dict(color='royalblue')), row=1, col=1)
+        fig.add_trace(go.Scatter(x=t, y=hprime, name='Filtered data', line=dict(color='orange')), row=1, col=1)
         #ax1.legend(loc='lower left');
     else:
-        fig.add_trace(go.Scatter(x=t, y=hprime), row=1, col=1)
+        fig.add_trace(go.Scatter(x=t, y=hprime, line=dict(color='royalblue')), row=1, col=1)
     fig.update_xaxes(
         title_text="Time (seconds)", 
         range=[t[0], t[-1]], 
@@ -175,10 +175,10 @@ def plot_td_and_fd_edit(t, hprime, f, htildeprime, h=None, htilde=None):
 
     #frequency domain plot
     if htilde is not None:
-        fig.add_trace(go.Scatter(x=f, y=abs(htilde), name='Raw data'), row=1, col=2)
-        fig.add_trace(go.Scatter(x=f, y=abs(htildeprime), name='Filtered data'), row=1, col=2)
+        fig.add_trace(go.Scatter(x=f, y=abs(htilde), name='Raw data', line=dict(color='royalblue')), row=1, col=2)
+        fig.add_trace(go.Scatter(x=f, y=abs(htildeprime), name='Filtered data', line=dict(color='orange')), row=1, col=2)
     else:
-        fig.add_trace(go.Scatter(x=f, y=abs(htildeprime)), row=1, col=2)
+        fig.add_trace(go.Scatter(x=f, y=abs(htildeprime), line=dict(color='royalblue')), row=1, col=2)
     fig.update_xaxes(
         title_text='Frequency (Hz)', type="log",
         range=[np.log10(1), np.log10(sampling_rate/2)],
