@@ -142,12 +142,6 @@ def _():
     )
 
 
-@app.cell
-def _(script_response):
-    print("import marimo as mo" in script_response.text)
-    return
-
-
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(
